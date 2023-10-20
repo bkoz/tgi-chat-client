@@ -5,7 +5,7 @@ client = InferenceClient(model="https://tgis-tgi.apps.ocp.sandbox2000.opentlc.co
 
 def inference(message, history):
     partial_message = ""
-    for token in client.text_generation(message, max_new_tokens=100, stream=True):
+    for token in client.text_generation(message, max_new_tokens=20, stream=True):
         partial_message += token
         yield partial_message
 
